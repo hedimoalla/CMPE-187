@@ -1,2 +1,2 @@
 # CMPE-187
-CMPE 187 Asssignments
+CMPE 187 Assignments
