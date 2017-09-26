@@ -3,22 +3,31 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Palindrome {
+	
     public static void main(final String[] args) {
-        System.out.print("Input a String: ");
-        final Scanner scanner = new Scanner(System.in);
-        final String inputString = scanner.nextLine();
-        if(inputString != null && !inputString.isEmpty()) {
-            char[] charArray = inputString.toCharArray();
-            if(Palindrome.isPalindrome(charArray)) {
-                System.out.println(inputString + " is a Palindrome!");
-            }
-            else {
-                System.out.println(inputString + " is NOT a Palindrome!");
-            }
-        }
-        else {
-            System.out.println("Invalid input!");
-        }
+		String again = "Y";		
+		Scanner input = new Scanner(System.in);
+        
+		do {
+			System.out.print("Input a String: ");
+			final Scanner scanner = new Scanner(System.in);
+			final String inputString = scanner.nextLine();
+			if(inputString != null && !inputString.isEmpty()) {
+				char[] charArray = inputString.toCharArray();
+				if(Palindrome.isPalindrome(charArray)) {
+					System.out.println(inputString + " is a Palindrome!");
+				}
+				else {
+					System.out.println(inputString + " is NOT a Palindrome!");
+				}
+			}
+			else {
+				System.out.println("Invalid input!");
+			}
+			System.out.println("Check another string? Y or N?");
+			again = input.nextLine();
+						
+		} while(!again.equalsIgnoreCase("N"));
     }
     
     private static boolean isPalindrome(final char[] charArray) {
