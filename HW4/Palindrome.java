@@ -1,32 +1,41 @@
+/* Team 15 */
+
+package palindrome;
+
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.LinkedList;
-
-/* Team 15 */
 
 
 class Palindrome {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String tryAgain = "y";
+        do {
+            System.out.print("Enter any string:");
 
-    	System.out.print("Enter any string:");
-        Scanner in=new Scanner(System.in);
-        String inputString = in.nextLine();
-        Queue queue = new LinkedList();
+            Scanner in = new Scanner(System.in);
+            String inputString = in.nextLine();
+            Queue queue = new LinkedList();
 
-        for (int i = inputString.length()-1; i >=0; i--) {
-            queue.add(inputString.charAt(i));
-        }
+            for (int i = inputString.length() - 1; i >= 0; i--) {
+                queue.add(inputString.charAt(i));
+            }
 
-        String reverseString = "";
+            String reverseString = "";
 
-        while (!queue.isEmpty()) {
-            reverseString = reverseString+queue.remove();
-        }
-        if (inputString.equals(reverseString))
-            System.out.println("The input String is a palindrome.");
-        else
-            System.out.println("The input String is not a palindrome.");
-
+            while (!queue.isEmpty()) {
+                reverseString = reverseString + queue.remove();
+            }
+            if (inputString.equals(reverseString)) {
+                System.out.println("The input String is a palindrome.");
+            } else {
+                System.out.println("The input String is not a palindrome.");
+            }
+            System.out.println("Try again? enter \"y/n\".");
+            tryAgain = input.nextLine();
+            
+        }while(!tryAgain.equals("n"));
     }
 }
