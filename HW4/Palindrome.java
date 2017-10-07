@@ -14,10 +14,13 @@ class Palindrome {
         System.out.print("Welcome!\nThis Program checks whether an input string is a palindrome\n");
         do {
             System.out.print("Enter any string: ");
-            
+
             Scanner in = new Scanner(System.in);
             String inputString = in.nextLine();
-            System.out.println("# of characters in the string: " + inputString.length());
+            System.out.println("The string is: " + inputString);        
+            inputString = inputString.replaceAll("\\W", "");		// remove spaces and punctuation
+            inputString = inputString.toLowerCase();            	// treat all chars as lower case 
+            System.out.println("Without spaces and punctuation, the string is:" + inputString);
             Queue queue = new LinkedList();
 
             for (int i = inputString.length() - 1; i >= 0; i--) {
@@ -34,6 +37,7 @@ class Palindrome {
             } else {
                 System.out.println("No, the input String is NOT a palindrome.");
             }
+            System.out.println("# of characters in the string: " + inputString.length());
             System.out.println("Try again? Enter Y for Yes.");
             tryAgain = input.nextLine();
 
