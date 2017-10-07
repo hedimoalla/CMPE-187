@@ -2,9 +2,6 @@
 	CMPE 187 GROUP 15 
 	Branden Caasi - Hedi Moalla - Linh Phan - Josue Ramirez
 */
-
-package palindrome;
-
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.LinkedList;
@@ -17,9 +14,10 @@ class Palindrome {
         System.out.print("Welcome!\nThis Program checks whether an input string is a palindrome\n");
         do {
             System.out.print("Enter any string: ");
-
+            
             Scanner in = new Scanner(System.in);
             String inputString = in.nextLine();
+            System.out.println("# of characters in the string: " + inputString.length());
             Queue queue = new LinkedList();
 
             for (int i = inputString.length() - 1; i >= 0; i--) {
