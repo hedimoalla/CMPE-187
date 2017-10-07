@@ -1,4 +1,7 @@
-/* Team 15 */
+/* 
+	CMPE 187 GROUP 15 
+	Branden Caasi - Hedi Moalla - Linh Phan - Josue Ramirez
+*/
 
 package palindrome;
 
@@ -6,14 +9,14 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.LinkedList;
 
-
 class Palindrome {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String tryAgain = "y";
+        String tryAgain;
+        System.out.print("Welcome!\nThis Program checks whether an input string is a palindrome\n");
         do {
-            System.out.print("Enter any string:");
+            System.out.print("Enter any string: ");
 
             Scanner in = new Scanner(System.in);
             String inputString = in.nextLine();
@@ -29,13 +32,13 @@ class Palindrome {
                 reverseString = reverseString + queue.remove();
             }
             if (inputString.equals(reverseString)) {
-                System.out.println("The input String is a palindrome.");
+                System.out.println("Yes, the input String IS a palindrome.");
             } else {
-                System.out.println("The input String is not a palindrome.");
+                System.out.println("No, the input String is NOT a palindrome.");
             }
-            System.out.println("Try again? enter \"y/n\".");
+            System.out.println("Try again? Enter Y for Yes.");
             tryAgain = input.nextLine();
-            
-        }while(!tryAgain.equals("n"));
+
+        } while (tryAgain.toUpperCase().equals("Y"));
     }
 }
