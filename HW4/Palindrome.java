@@ -13,13 +13,18 @@ class Palindrome {
         String tryAgain;
         System.out.print("Welcome!\nThis Program checks whether an input string is a palindrome\n");
         do {
-            System.out.print("Enter any string: ");
+            System.out.print("Enter a string to check if it is a Palindrome: ");
 
             Scanner in = new Scanner(System.in);
             String inputString = in.nextLine();
-            System.out.println("The string is: " + inputString);        
-            inputString = inputString.replaceAll("\\W", "");		// remove spaces and punctuation
-            inputString = inputString.toLowerCase();            	// treat all chars as lower case 
+            System.out.println("The string is: " + inputString);
+            if (inputString.isEmpty()) {
+                System.out.println("No, the input String is NOT a palindrome.\nPlease Run the program again!");
+                break;
+            }
+            inputString = inputString.replaceAll("[^A-Za-z0-9\\s]", "");    // keep letters and numbers
+            inputString = inputString.replaceAll("\\W", "");                // remove spaces and punctuation
+            inputString = inputString.toLowerCase();                        // treat all chars as lower case 
             System.out.println("Without spaces and punctuation, the string is:" + inputString);
             Queue queue = new LinkedList();
 
